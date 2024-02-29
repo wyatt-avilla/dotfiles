@@ -1,0 +1,4 @@
+# stow will ignore these patterns
+\.git
+\.gitignore
+readme.md
