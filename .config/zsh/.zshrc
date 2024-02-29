@@ -10,7 +10,6 @@ export ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-
 # aliases
 alias vim="nvim"
 alias ls="eza --icons"
@@ -24,12 +23,10 @@ alias discord="hyprctl dispatch killactive && hyprctl dispatch exec \"discord\""
 alias chrome="google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias objdiff="hyprctl dispatch killactive && hyprctl dispatch exec \"/home/wyatt/.cargo/bin/objdiff\""
 
-
 # emerge
 alias emerge="doas emerge"
 alias emaint="doas emaint"
 alias dispatch-conf="doas dispatch-conf"
-
 
 # chrome proper shutdown
 alias poweroff="cleandown poweroff"
@@ -51,14 +48,12 @@ setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 
-
 # nnn
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_PLUG='p:preview-tui'
 export NNN_COLORS='5555'
 export NNN_FCOLORS='050505050505050505050505'
 export SPLIT="v"
-
 
 NNN ()
 {
@@ -83,13 +78,11 @@ bindkey -M vicmd 'n' backward-char
 bindkey -M vicmd 'e' down-line-or-history
 bindkey -M vicmd 'i' up-line-or-history
 bindkey -M vicmd 'o' forward-char
-
 bindkey -M vicmd 'h' vi-insert
-
 bindkey -v '^?' backward-delete-char
 export KEYTIMEOUT=1
 
-# Change cursor shape for different vi modes. (luke smith yoink)
+# Change cursor shape for different vi modes
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
