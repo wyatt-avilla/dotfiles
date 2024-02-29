@@ -41,6 +41,7 @@ cleandown() {
 }
 
 # history
+HISTFILE=~/.config/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt APPEND_HISTORY
