@@ -1,0 +1,153 @@
+(defwidget bar []
+  (box :orientation "h"
+       :class "main-bar"
+    (left-box)
+    (middle-box)
+    (right-box)
+    ))
+
+(defwidget left-box []
+  (box :class "left-box"
+       :halign "start"
+       :space-evenly false
+    (packages)
+    (net)
+))
+
+(defwidget middle-box [] 
+  (box :class "middle-box"
+       :halign "center"
+       :space-evenly true 
+    (windowOrSong)
+  )  
+)
+
+(defwidget right-box [] 
+  (box :class "right-box"
+       :halign "end"
+       :space-evenly false
+    (box    :class "dial-box"
+            :halign "center"
+            :space-evenly true 
+            :spacing 8
+      (box
+        :spacing 4
+        :tooltip "${cpu-use} %"
+        (image :path "./assets/cpu.png"
+               :image-width 18)
+        (circular-progress
+                :class "cpu-dial"
+                :start-at 75
+                :value {cpu-use}
+                :thickness 10 
+        )
+      )
+
+      (box
+        :spacing 4
+        :tooltip "${round(EWW_RAM["used_mem"]/(1024*1024*1024), 2)} GB"
+        (image :path "./assets/ram.png"
+               :image-width 18)
+        (circular-progress
+                :class "ram-dial"
+                :start-at 75
+                :value {ram-use}
+                :thickness 10
+        )  
+
+      )
+
+      (box
+        :spacing 4
+        :tooltip "${volume} %"
+        (image :path "./assets/speaker.png"
+               :image-width 18)
+        (circular-progress
+                :class "volume-dial"
+                :start-at 75
+                :value {volume}
+                :thickness 10 
+        )  
+      )
+    )
+    (label :class "time-data"
+           :tooltip "${cal}"
+           :text {time})
+  )  
+)
+
+(defwidget windowOrSong []
+  (box
+    :class "middle-blob"
+    :space-evenly false
+    :visible {middle-blob.blob_visible}
+  (image :path "${middle-blob.icon.path}"
+    :class "middle-blob-icon"
+     :visible {middle-blob.icon.icon_visible}
+     :image-width 18)
+  (label :text {middle-blob.display_title})
+    )
+  )
+
+(defwidget net []
+    (box
+      :class "net-labels"
+      :halign "center"
+      :space-evenly false
+      :spacing 8
+      (label :text {net-use.outgoing})
+      (image :path "./assets/upload.png"
+           :image-width 18)
+      (label :text {net-use.incoming})
+      (image :path "./assets/download.png"
+           :image-width 18)
+    )
+  )
+
+(defwidget packages []
+    (box
+      :halign "start"
+      :class "package-label"
+      :tooltip "${packages.old}"
+        (image :path "./assets/box.png"
+             :image-width 18)
+        (label :text ":${packages.installed}")
+    )
+)
+
+(defpoll packages :interval "3600s"
+  :initial {"{\"installed\":\"000\", \"old\":\"loading...\"}"}
+  "scripts/getpackages.sh")
+(defpoll net-use :interval "0.5s"
+  :initial {"{\"incoming\":\"0.000  B/s\", \"outgoing\":\"0.000  B/s\"}"}
+  "scripts/getnet.sh")
+
+(defpoll middle-blob :interval "0.5s"
+  "scripts/middleInfo.sh")
+
+(defpoll cpu-use :interval "1s"
+  "scripts/getcpu")
+(defpoll ram-use :interval "1s"
+  "scripts/getram")
+(defpoll volume :interval "1s"
+  "scripts/getvol.sh")
+
+(defpoll time :interval "10s"
+  "date '+%R %b %d, %Y'")
+(defpoll cal :interval "43200s"
+  "cal | head -n -1")
+
+(defwindow bar
+  :monitor 0
+  :class "bar-window"
+  :windowtype "dock"
+  :stacking "fg"
+  :exclusive false
+  :geometry (geometry :x "0%"
+                      :y "2px"
+                      :width "95%"
+                      :height "2%"
+                      :anchor "top center")
+            
+  :reserve (struts  :distance "0%":side "top")
+  (bar))

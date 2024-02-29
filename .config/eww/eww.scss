@@ -1,0 +1,129 @@
+* {
+  font-family: Hasklug NFM
+}
+
+// is this gross?
+$blob-radius: 20px;
+//$blob-color: rgba(29, 29, 29, 0.8);
+$blob-color: rgba(31, 31, 40, 0.9);
+
+$blob-hmargin: 15px;
+$blob-vmargin: 5px;
+
+$blob-hpadding: 25px;
+$blob-vpadding: 5px;
+
+$border-width: 2px;
+$border-color: #DCD7BA;
+
+//$box-debug: rgba(150, 10, 111, 0.8);
+$box-debug: transparent;
+
+.bar {
+  background-color: $box-debug;
+}
+
+.main-bar {
+  font-weight: 900;
+  font-size: 15px;
+  background-color: transparent;
+  //background-color: rgba(111, 111, 111, 0.8);
+}
+
+.left-box {
+  background-color: $box-debug;
+}
+
+.middle-box {
+  background-color: $box-debug;
+}
+
+.right-box {
+  background-color: $box-debug;
+}
+
+.dial-box {
+  background-color: $blob-color;
+  margin-left: $blob-hmargin;
+  margin-right: $blob-hmargin;
+  margin-top: $blob-vmargin;
+  margin-bottom: $blob-vmargin;
+  padding-left: $blob-hpadding;
+  padding-right: $blob-hpadding;
+  padding-top: $blob-vpadding;
+  padding-bottom: $blob-vpadding;
+  border-radius: $blob-radius;
+  border: $border-width solid $border-color;
+}
+
+.cpu-dial {
+}
+
+.ram-dial {
+}
+
+.volume-dial {
+}
+
+.time-data {
+  background-color: $blob-color;
+  margin-left: $blob-hmargin;
+  margin-right: $blob-hmargin;
+  margin-top: $blob-vmargin;
+  margin-bottom: $blob-vmargin;
+  padding-left: $blob-hpadding;
+  padding-right: $blob-hpadding;
+  padding-top: $blob-vpadding;
+  padding-bottom: $blob-vpadding;
+  border-radius: $blob-radius;
+  border: $border-width solid $border-color;
+}
+
+.middle-blob {
+  background-color: $blob-color;
+  margin-left: $blob-hmargin;
+  margin-right: $blob-hmargin;
+  margin-top: $blob-vmargin;
+  margin-bottom: $blob-vmargin;
+  padding-left: $blob-hpadding;
+  padding-right: $blob-hpadding;
+  padding-top: $blob-vpadding;
+  padding-bottom: $blob-vpadding;
+  border-radius: $blob-radius;
+  border: $border-width solid $border-color;
+}
+
+.middle-blob-icon {
+  //background-color: rgba(110, 110, 110, 0.8);
+  // lol
+  padding-left: 3px;
+  padding-right: 22px;
+}
+
+.net-labels {
+  background-color: $blob-color;
+  margin-left: $blob-hmargin;
+  margin-right: $blob-hmargin;
+  margin-top: $blob-vmargin;
+  margin-bottom: $blob-vmargin;
+  padding-left: $blob-hpadding;
+  padding-right: $blob-hpadding;
+  padding-top: $blob-vpadding;
+  padding-bottom: $blob-vpadding;
+  border-radius: $blob-radius;
+  border: $border-width solid $border-color;
+}
+
+.package-label {
+  background-color: $blob-color;
+  margin-left: $blob-hmargin;
+  margin-right: $blob-hmargin;
+  margin-top: $blob-vmargin;
+  margin-bottom: $blob-vmargin;
+  padding-left: $blob-hpadding;
+  padding-right: $blob-hpadding;
+  padding-top: $blob-vpadding;
+  padding-bottom: $blob-vpadding;
+  border-radius: $blob-radius;
+  border: $border-width solid $border-color;
+}

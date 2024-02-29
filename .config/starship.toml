@@ -1,0 +1,94 @@
+# ~/.config/starship.toml
+
+# Inserts a blank line between shell prompts
+add_newline = true 
+
+# Change the default prompt format
+format = """\
+[╭╴󰣨 ](255)$env_var\
+$all[╰─](255)$character"""
+
+# Change the default prompt characters
+[character]
+success_symbol = "[](255)"
+error_symbol = "[](255)"
+
+# Purple for vim mode
+vimcmd_symbol = "[](255)"
+
+# Shows the username
+[username]
+style_user = "purple bold"
+style_root = "black bold"
+format = "[$user]($style) "
+disabled = false  # disable in powershell
+show_always = true
+
+[directory]
+truncation_length = 5
+truncation_symbol = "…/"
+home_symbol = " ~"
+read_only_style = "197"
+read_only = "  "
+format = "at [$path]($style)[$read_only]($read_only_style) "
+style = "bold yellow"
+
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+truncation_length = 8
+truncation_symbol = "…/"
+style = "bold green"
+
+[git_status]
+format = '[\($all_status$ahead_behind\)]($style) '
+style = "bold green"
+conflicted = "🏳"
+up_to_date = ""
+untracked = ""
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+stashed = ""
+modified = ""
+staged = '[++\($count\)](green)'
+renamed = "襁"
+deleted = ""
+
+[terraform]
+format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
+
+[vagrant]
+format = "via [ vagrant $version]($style) "
+
+[docker_context]
+format = "via [ $context](bold blue) "
+
+[helm]
+format = "via [ $version](bold purple) "
+
+[python]
+symbol = " "
+python_binary = "python3"
+
+[nodejs]
+format = "via [ $version](bold green) "
+disabled = true
+
+[ruby]
+format = "via [ $version]($style) "
+
+[c]
+format = "via [ $version]($style) "
+
+[golang]
+format = "via [ $version](bold cyan) "
+
+[rust]
+format = "via [󰟟 $version](red bold) "
+
+[lua]
+format = "via [ $version](bold blue) "
+
+[container]
+disabled = true
