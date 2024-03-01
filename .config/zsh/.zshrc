@@ -15,7 +15,7 @@ alias vim="nvim"
 alias ls="eza --icons"
 alias cat="bat"
 alias grep="rg"
-alias lf="yazi"
+alias lf="ya-with-dir-change"
 
 alias obsidian="hyprctl dispatch killactive && hyprctl dispatch exec \"obsidian --enable-features=UseOzonePlatform --ozone-platform-hint=wayland\""
 alias spotify="hyprctl dispatch killactive && hyprctl dispatch exec \"spotify\""
@@ -38,6 +38,15 @@ cleandown() {
     fi
         doas python /boot/grub/themes/minegrub-theme/update_theme.py > /dev/null
         doas $1
+}
+
+function ya-with-dir-change() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 # history
