@@ -15,7 +15,7 @@ alias vim="nvim"
 alias ls="eza --icons"
 alias cat="bat"
 alias grep="rg"
-alias lf="NNN -P p"
+alias lf="yazi"
 
 alias obsidian="hyprctl dispatch killactive && hyprctl dispatch exec \"obsidian --enable-features=UseOzonePlatform --ozone-platform-hint=wayland\""
 alias spotify="hyprctl dispatch killactive && hyprctl dispatch exec \"spotify\""
@@ -48,30 +48,6 @@ setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
-
-# nnn
-export NNN_FIFO='/tmp/nnn.fifo'
-export NNN_PLUG='p:preview-tui'
-export NNN_COLORS='5555'
-export NNN_FCOLORS='050505050505050505050505'
-export SPLIT="v"
-
-NNN ()
-{
-    [ "${NNNLVL:-0}" -eq 0 ] || {
-        echo "nnn is already running"
-        return
-    }
-
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-    command nnn "$@"
-
-    [ ! -f "$NNN_TMPFILE" ] || {
-        . "$NNN_TMPFILE"
-        rm -f "$NNN_TMPFILE" > /dev/null
-    }
-}
 
 # vimcel
 bindkey -v
