@@ -1,0 +1,39 @@
+* {
+    font-family: 'Hasklug NFM';
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+#window {
+    margin: 0px;
+    border: 2px solid #DCD7BA;
+    border-radius: 10px;
+}
+
+#input {
+    margin: 15px;
+    border-radius: 25px;
+}
+
+#scroll {
+    margin-bottom: 15px;
+}
+
+#entry {
+    margin: 0px 15px;
+}
+
+#entry:selected {
+    border-radius: 0px;
+    border: none;
+    outline: none;
+}
+
+#entry > box {
+    margin-left: 16px;
+}
+
+#entry image {
+    padding-right: 10px;
+}
