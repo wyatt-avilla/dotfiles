@@ -1,4 +1,6 @@
 # stow will ignore these patterns
 \.git
 \.gitignore
+\.github
+\.gitmodules
 readme.md
