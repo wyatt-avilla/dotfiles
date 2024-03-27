@@ -1,3 +1,4 @@
-#!/bin/sh
-wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/^[^.]*\.//'
+#!/bin/bash
 
+masterInfo=$(amixer -M get PCM,0 | grep "Front Left:")
+echo "$masterInfo" | sed -n 's/.*\[\(.*\)%\].*/\1/p'
