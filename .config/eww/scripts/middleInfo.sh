@@ -92,9 +92,9 @@ getWindow() {
 }
 
 curr_stream=""
-if wpctl status | grep spotify >/dev/null; then
+if pgrep -x "spotify" >/dev/null; then
   curr_stream="spotify"
-elif wpctl status | grep ncspot >/dev/null; then
+elif pgrep -x "ncspot" >/dev/null; then
   curr_stream="ncspot"
 fi
 
