@@ -36,7 +36,6 @@ cleandown() {
     if pgrep -x chrome > /dev/null; then
         killall chrome
     fi
-        doas python /boot/grub/themes/minegrub-theme/update_theme.py > /dev/null
         doas $1
 }
 
