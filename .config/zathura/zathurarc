@@ -5,3 +5,5 @@ map o scroll right
 
 map E navigate next
 map I navigate previous
+
+include kanagawa
