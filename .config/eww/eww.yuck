@@ -128,7 +128,7 @@
 (defpoll cpu-use :interval "1s"
   "scripts/getcpu")
 (defpoll ram-use :interval "1s"
-  "scripts/getram")
+  "scripts/getram.sh")
 (defpoll volume :interval "1s"
   "scripts/getvol.sh")
 
