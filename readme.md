@@ -1,10 +1,8 @@
 # dotfiles
 
-## install
+## picture
 
-```shell
-emerge -av dev-vcs/git app-shells/zsh x11-terms/kitty gui-apps/eww gui-wm/hyprland
-```
+![hi](./screenshot.png)
 
 ## todo
 
