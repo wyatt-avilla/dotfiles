@@ -126,7 +126,7 @@
   "scripts/middleInfo.sh")
 
 (defpoll cpu-use :interval "1s"
-  "scripts/getcpu")
+  "scripts/getcpu.sh")
 (defpoll ram-use :interval "1s"
   "scripts/getram.sh")
 (defpoll volume :interval "1s"
