@@ -123,7 +123,7 @@
   "scripts/getnet.sh")
 
 (defpoll middle-blob :interval "0.5s"
-  "scripts/middleInfo.sh")
+  "scripts/middle_info.sh")
 
 (defpoll cpu-use :interval "1s"
   "scripts/getcpu.sh")
