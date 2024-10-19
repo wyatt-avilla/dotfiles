@@ -5,7 +5,7 @@ export PATH="${HOME}/.cargo/bin:$PATH"
 export HYPRSHOT_DIR=/home/wyatt/media/screenshots
 
 # omzsh
-export ZSH=/usr/share/zsh/site-contrib/oh-my-zsh
+export ZSH=/usr/share/oh-my-zsh/
 export ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
@@ -22,22 +22,11 @@ alias spotify="hyprctl dispatch killactive && hyprctl dispatch exec \"spotify\""
 alias discord="hyprctl dispatch killactive && hyprctl dispatch exec \"discord\""
 alias chrome="google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias objdiff="hyprctl dispatch killactive && hyprctl dispatch exec \"/home/wyatt/.cargo/bin/objdiff\""
+alias firefox="exec firefox"
 
 # emerge
-alias emerge="doas emerge"
-alias emaint="doas emaint"
-alias dispatch-conf="doas dispatch-conf"
+alias pacman="doas pacman"
 
-# chrome proper shutdown
-alias poweroff="cleandown poweroff"
-alias reboot="cleandown reboot"
-
-cleandown() {
-    if pgrep -x chrome > /dev/null; then
-        killall chrome
-    fi
-        doas $1
-}
 
 function ya-with-dir-change() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
@@ -93,7 +82,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 eval "$(starship init zsh)"
 
 # syntax highligting
-source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # autocomplete
-source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
