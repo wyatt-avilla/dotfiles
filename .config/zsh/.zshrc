@@ -59,11 +59,11 @@ setopt HIST_EXPIRE_DUPS_FIRST
 
 # vimcel
 bindkey -v
-bindkey -M vicmd 'n' backward-char
-bindkey -M vicmd 'e' down-line-or-history
-bindkey -M vicmd 'i' up-line-or-history
-bindkey -M vicmd 'o' forward-char
-bindkey -M vicmd 'h' vi-insert
+bindkey -M vicmd 'h' backward-char
+bindkey -M vicmd 'j' down-line-or-history
+bindkey -M vicmd 'k' up-line-or-history
+bindkey -M vicmd 'l' forward-char
+bindkey -M vicmd 'i' vi-insert
 bindkey -v '^?' backward-delete-char
 export KEYTIMEOUT=1
 
