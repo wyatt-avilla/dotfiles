@@ -2,7 +2,7 @@ ufetch
 
 export EDITOR=/usr/bin/nvim
 export PATH="${HOME}/.cargo/bin:$PATH"
-export HYPRSHOT_DIR=/home/wyatt/media/screenshots
+export HYPRSHOT_DIR=/home/spebby/media/screenshots
 
 # omzsh
 export ZSH=/usr/share/oh-my-zsh/
