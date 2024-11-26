@@ -7,3 +7,5 @@ map E navigate next
 map I navigate previous
 
 include kanagawa
+
+set selection-clipboard clipboard
