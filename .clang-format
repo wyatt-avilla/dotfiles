@@ -13,3 +13,17 @@ SpacesBeforeTrailingComments: "1"
 SpacesInParentheses: "false"
 SpacesInSquareBrackets: "false"
 UseTab: Never
+
+# function declaration/call formatting
+BinPackArguments: "false"
+BinPackParameters: "false"
+AllowAllParametersOfDeclarationOnNextLine: "false"
+AllowAllArgumentsOnNextLine: "false"
+AlignAfterOpenBracket: BlockIndent
+PenaltyBreakBeforeFirstCallParameter: 1
+BraceWrapping:
+  AfterControlStatement: false
+  AfterFunction: false
+  BeforeCatch: false
+  BeforeElse: false
+BreakBeforeBraces: Attach
